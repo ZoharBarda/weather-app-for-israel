@@ -49,7 +49,7 @@ function About() {
                   <div className="developer-card">
                     <div className="developer-avatar">🎓</div>
                     <div className="developer-info">
-                      <h4>Zohar</h4>
+                      <h4>Zohar Barda</h4>
                       <p className="text-muted">23 years old</p>
                       <p className="text-muted">Student at John Bryce Academy</p>
                     </div>
@@ -68,7 +68,7 @@ function About() {
                 </div>
 
                 <div className="text-center mt-5">
-                  <p className="text-muted">❤️ נעשה בעזבה ובתשוקה</p>
+                  <p className="text-muted">❤️ נעשה באהבה ובתשוקה</p>
                 </div>
               </div>
             </div>

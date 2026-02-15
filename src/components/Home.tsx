@@ -17,7 +17,7 @@ interface WeatherData {
 
 function Home() {
   const [settlements, setSettlements] = useState<Settlement[]>([])
-  const [selectedSettlement, setSelectedSettlement] = useState<string>('Jerusalem')
+  const [selectedSettlement, setSelectedSettlement] = useState<string>('')
   const [weather, setWeather] = useState<WeatherData | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string>('')
@@ -161,8 +161,10 @@ function Home() {
 
   // Fetch weather when settlement is selected
   useEffect(() => {
-    if (selectedSettlement) {
+    if (selectedSettlement && selectedSettlement.trim() !== '') {
       fetchWeather(selectedSettlement)
+    } else {
+      setWeather(null)
     }
   }, [selectedSettlement])
 
@@ -243,6 +245,7 @@ function Home() {
                   value={selectedSettlement}
                   onChange={(e) => setSelectedSettlement(e.target.value)}
                 >
+                  <option value="">-- בחר יישוב --</option>
                   {settlements.map((settlement) => (
                     <option key={settlement.englishName} value={settlement.englishName}>
                       {settlement.name}
